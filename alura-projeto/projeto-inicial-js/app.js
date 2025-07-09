@@ -1,22 +1,20 @@
-alert("Boas vindas ao nosso site!");
+alert ("Boas vindas ao jogo do número secreto");
 
-var nome = "Lua";
-var idade = 25;
-var numeroDeVendas = 50;
-var saldoDisponivel = 1000;
+let numeroSecreto = 5;
+let  chute;
+let tentativas = 1;
 
-alert("Erro! Preencha todos os campos");
+while (chute != numeroSecreto) {
+    chute = prompt("Escolha um número entre 1 e 10");
 
-var mensagemDeErro = "Erro! Preencha todos os campos"
-alert(mensagemDeErro);
-
-var nome2 = prompt("Qual seu nome?");
-var idade2 = prompt("Qual a sua idade?");
-
-var idade3 = 18;
-
-if (idade3 < 18) {
-    console.log("Menor de idade")
-} else (
-    console.log("Pode tirar a habilitação!")
-)
+    if (chute == numeroSecreto) {
+        alert(`Você descobriu o número secreto ${numeroSecreto} com ${tentativas} tentativas`);
+    } else {
+        if (chute > numeroSecreto) {
+            alert(`O número secreto é menor que ${chute}`);
+        } else {
+            alert(`O número secreto é maior que ${chute}`);
+        }
+        tentativas ++;
+    }
+}
